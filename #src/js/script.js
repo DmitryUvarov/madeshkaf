@@ -47,3 +47,44 @@ testWebP(function (support) {
     }
 });
 //  \\\ Функция для проверки поддерживает ли браузер формат изображений .webp
+
+
+// HEADER
+const headerElement = document.querySelector('.header');
+
+const callback = function (entries, observer) {
+    if (entries[0].isIntersecting) {
+        headerElement.classList.remove('_scroll');
+    } else {
+        headerElement.classList.add('_scroll');
+    }
+};
+const headerObserver = new IntersectionObserver(callback);
+headerObserver.observe(headerElement);
+
+
+// BURGER
+
+const iconMenu = document.querySelector('.icon-menu');
+let body = document.querySelector('body');
+if (iconMenu) {
+    const menuBody = document.querySelector('.menu-header');
+    iconMenu.addEventListener("click", function (e) {
+        let targetElement = e.target;
+        document.body.classList.toggle('_lock');
+        iconMenu.classList.toggle('_active');
+        menuBody.classList.toggle('_active');
+    })
+}
+
+
+// BURGER           //////////
+
+
+let headerWrapper = document.querySelector('.header__wrapper');
+let bodyWidth = document.body.clientWidth;
+headerWrapper.style.width = bodyWidth + "px";
+window.addEventListener('resize', function (e) {
+    let bodyWidth = document.body.clientWidth;
+    headerWrapper.style.width = bodyWidth + "px";
+});

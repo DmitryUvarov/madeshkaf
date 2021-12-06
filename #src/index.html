@@ -15,8 +15,48 @@
         @@include('_header.html')
         <!--ШАПКА-->
         <main class="page">
-            <section class="page__">
-                содержимое страницы
+            <section class="page__main main">
+                <div class="main__container _container">
+                    <div class="main__body">
+                        <h1 class="main__title">Шкафы на заказ</h1>
+                        <div class="main__text">По заявке с сайта скидка 10% каждому покупателю</div>
+                        <div class="main__timer">
+                            <div class="main__timer__title">До конца скидки осталось:</div>
+                            <div class="main__timer-items">
+                                <div class="main__timer-item">
+                                    <div>0</div>
+                                    <span>Дни</span>
+                                </div>
+                                <div class="main__timer-item">
+                                    <div>0</div>
+                                    <span>Часы</span>
+                                </div>
+                                <div class="main__timer-item">
+                                    <div>30</div>
+                                    <span>Мин</span>
+                                </div>
+                                <div class="main__timer-item">
+                                    <div>59</div>
+                                    <span>Сек</span>
+                                </div>
+                            </div>
+                        </div>
+                        <form class="main__form" action="#">
+                            <input class="main__form-input" type="text" placeholder="Введите номер телефона">
+                            <button class="main__form-btn" type="button">Получить скидку</button>
+                        </form>
+                    </div>
+                    <div class="social__block">
+                        <div class="social__block-items">
+                            <a href="#" class="social__block-link _icon-viber"></a>
+                            <a href="#" class="social__block-link _icon-telegram"></a>
+                            <a href="#" class="social__block-link _icon-whatsapp"></a>
+                        </div>
+                        <div class="social__block-number">
+                            <a href="tel:+375259199290" class="social__block-number-link"><span>+375259199290</span><span>Пн-Вс 9:00-21:00</span></a>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
         @@include('_footer.html')

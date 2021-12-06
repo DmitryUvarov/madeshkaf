@@ -16,15 +16,15 @@
 
 
 // Шрифт по умолчанию =============================================================================================================
-$FontFamily: "";
+$FontFamily: "Gilroy";
 $FontSize: 16;
 // \Шрифт по умолчанию =============================================================================================================
 
 
 // <ПЕРЕМЕННЫЕ> =============================================================================================================
 $minWidth: 320px;
-$maxWidth: 1440;
-$maxWidthContainer: 1000000; // ширина контейнера у проекта без px
+$maxWidth: 1190;
+$maxWidthContainer: 1220; // ширина контейнера у проекта без px
 $md1: $maxWidthContainer + 12;
 $md2: 991.98;
 $md3: 767.98;
@@ -54,8 +54,9 @@ body {
     line-height: 1;
     height: 100%;
     color: $mainColor;
-    font-family: "Gilroy";
+    font-family: $FontFamily;
     overflow-x: hidden;
+    font-weight: 400;
 }
 .wrapper {
     min-height: 100%;
@@ -96,9 +97,268 @@ body {
 // ОСНОВНОЙ БЛОК ==========================================================================================================
 .page {
     flex: 1 1 auto;
+
+    &__main {
+    }
 }
 
 
 // \ОСНОВНОЙ БЛОК ==========================================================================================================
 
 
+.main {
+    background-image: url(../img/main/bg.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+
+
+    @media (min-width: $md2+px) {
+        &::before {
+            content: "";
+            position: absolute;
+            width: calc(50% + 60px);
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background: rgba(53, 53, 53, 0.24);
+            // Если браузер поддерживает свойство backdrop-filter
+            @supports ((-webkit-backdrop-filter: blur(32px)) or (backdrop-filter: blur(32px))) {
+                background: rgba(53, 53, 53, 0.24);
+                backdrop-filter: blur(32px);
+            }
+        }
+    }
+
+    &__container {
+        position: relative;
+    }
+    &__body {
+        padding: 300px 0;
+        position: relative;
+        z-index: 5;
+        @media (max-width: $md2+px) {
+            padding: 200px 0 95px;
+
+            & * {
+                position: relative;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                width: calc(100% + 30px);
+                height: 65%;
+                top: 175px;
+                left: -15px;
+                background: rgba(53, 53, 53, 0.24);
+                    // Если браузер поддерживает свойство backdrop-filter
+                @supports ((-webkit-backdrop-filter: blur(32px)) or (backdrop-filter: blur(32px))) {
+                    background: rgba(53, 53, 53, 0.24);
+                    backdrop-filter: blur(32px);
+                }
+            }
+        }
+    }
+    &__title {
+        font-family: "Cormorant";
+        font-weight: 400;
+        line-height: 40%;
+        color: #FFFFFF;
+        margin-bottom: 45px;
+        position: relative;
+        @include adaptive-value("font-size", 70, 39, 1);
+        &::before {
+            content: url('../img/main/sale.png');
+            position: absolute;
+            top: -190px;
+            left: -65px;
+            transform: rotate(-12deg);
+        }
+        @media (max-width: $md3+px) {
+            margin-bottom: 25px;
+            &::before {
+                top: -80px;
+                left: -25px;
+                content: url('../img/main/sale02.png') ;
+            }
+        }
+    }
+    &__text {
+        max-width: 612px;
+        font-weight: 400;
+        line-height: 85%;
+        color: #FFFFFF;
+        text-shadow: 3px 1px 6px rgba(186, 217, 0, 0.26);
+        margin-bottom: 20px;
+        @include adaptive-value("font-size", 33, 20, 1);
+        @media (max-width: $md3+px) {
+            margin-bottom: 16px;
+        }
+    }
+    &__timer {
+        font-weight: 400;
+        line-height: 108%;
+        color: #FFFFFF;
+        @include adaptive-value("font-size", 26, 18, 1);
+    }
+    &__timer__title {
+        margin-bottom: 9px;
+    }
+    &__timer-items {
+        display: flex;
+        &>* {
+            &:not(:last-child) {
+                margin-right: 13px;
+            }
+        }
+    }
+    &__timer-item {
+
+        & div {
+            background: #FFFFFF;
+            width: 44px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            color: #11100E;
+            @include adaptive-value("font-size", 26, 19, 1);
+        }
+        & span {
+            line-height: 133%;
+            @include adaptive-value("font-size", 21, 15, 1);
+        }
+    }
+    &__form {
+        display: inline-block;
+        flex-direction: column;
+
+    }
+    &__form-input {
+        font-family: "Gilroy";
+        background: #FBFBFB;
+        border-radius: 8px;
+        margin: 30px 0;
+        max-width: 510px;
+        width: 100%;
+        padding: 12px 20px;
+        font-weight: 400;
+        line-height: 108%;
+        color: rgba(7, 7, 7, 0.39);
+        @include adaptive-value("font-size", 26, 19, 1);
+        &:focus {
+            background: #FBFBFB;
+        }
+        @media (max-width: $md3+px) {
+            margin-top: 20px;
+        }
+    }
+    &__form-btn {
+        font-family: "Gilroy";
+        font-weight: 400;
+        line-height: 108%;
+        padding: 14px 28px;
+        background-color: #AF9678;
+        border-radius: 8px;
+        color: #FFFFFF;
+        @include adaptive-value("font-size", 26, 19, 1);
+    }
+}
+.social__block {
+    @media (min-width: 1250px) {
+        position: absolute;
+        top: 50%;
+        right: 0;
+    }
+    @media (max-width: 1250px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 55px;
+    }
+    .social__block-items {
+        @media (max-width: 1250px) {
+            display: flex;
+
+        }
+        @media (min-width: 1250px) {
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                background-color: #fff;
+                bottom: 140px;
+                left: 50%;
+                height: 400px;
+                width: 2px;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                background-color: #fff;
+                top: 140px;
+                left: 50%;
+                max-height: 240px;
+                min-height: 280px;
+                width: 2px;
+            }
+        }
+    }
+    .social__block-link {
+
+        &::before {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 17px;
+            transition: color 0.3s ease 0s;
+            @media (max-width: 1250px) {
+                margin-bottom: 0px;
+                margin-right: 16px;
+            }
+        }
+    }
+    ._icon-viber {
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    color: #665CAC;
+                }
+            }
+        }
+    }
+    ._icon-telegram {
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    color: #0088cc;
+                }
+            }
+        }
+    }
+    ._icon-whatsapp {
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    color: #25D366;
+                }
+            }
+        }
+    }
+
+
+    .social__block-number {
+        @media (min-width: 1250px) {
+            display: none;
+        }
+
+    }
+    .social__block-number-link {
+        font-family: "Gilroy";
+        font-weight: 400;
+        font-size: 19px;
+        line-height: 28px;
+        color: #FFFFFF;
+        display: grid;
+    }
+}

@@ -1,0 +1,82 @@
+.footer {
+    background: #937A60;
+
+    &__container {
+
+    }
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: 2;
+        @media (min-width: $md2+px) {
+            display: flex;
+            align-items: center;
+            padding: 55px 0;
+        }
+        padding: 40px 0 60px;
+    }
+    &__logo {
+        flex: 1 1 auto;
+        & a {
+            font-family: "Playfair Display";
+            font-weight: 700;
+            line-height: 162%;
+            color: #FFFFFF;
+            @include adaptive-value("font-size", 32, 25, 1);
+        }
+    }
+    &__menu {
+        @media (min-width: $md2+px) {
+            flex: 1 1 auto;
+        }
+        @media (max-width: $md2+px) {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+    }
+    &__list {
+
+    }
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
+    &__link {
+        font-family: "Gilroy";
+        font-weight: 400;
+        line-height: 93%;
+        color: #FFFFFF;
+        position: relative;
+        @include adaptive-value("font-size", 30, 20, 1);
+        &::before {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 4px;
+            bottom: -2px;
+            left: 0;
+            background-color: #FFFFFF;
+            transition: all 0.3s ease 0s;
+        }
+        @media (max-width: $md3+px) {
+            line-height: 140%;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &__img-block {
+
+        & img {
+            max-width: 100%;
+            min-width: 160px;
+        }
+    }
+}
