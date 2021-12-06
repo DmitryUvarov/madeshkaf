@@ -1,0 +1,35 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+a, h1, h2, h3, h4, h5, h6, img {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+li {
+    list-style: none;
+}
+button,
+input {
+    border: 0;
+    background: none;
+
+}
+button,
+input:focus {
+    border: 0;
+    background: none;
+    outline: none;
+
+}
