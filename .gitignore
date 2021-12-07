@@ -6,6 +6,8 @@
 *.pdf
 *.psd
 *.sublime*
+package.json
+package-lock.json
 build/
 docs/
 node_modules/

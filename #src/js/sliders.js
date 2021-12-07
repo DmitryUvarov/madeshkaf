@@ -61,56 +61,71 @@ if (sliderScrollItems.length > 0) {
 
 function sliders_bild_callback(params) { }
 
-if (document.querySelector('.slider-main__body')) {
-    new Swiper('.slider-main__body', {
+if (document.querySelector('.tabs-slider1 .tabs__swiper-body')) {
+    new Swiper('.tabs-slider1 .tabs__swiper-body', {
         observer: true,
         observerParents: true,
-        slidesPerView: 1,
-        spaceBetween: 32,
+        spaceBetween: 30,
+        slidesPerView: "auto",
         watchOverflow: true,
         speed: 800,
         loop: true,
         loopAdditionalSlides: 5,
         preloadImages: false,
-        parallax: true,
         // Dotts
-        pagination: {
-            el: '.controls-slider-main__dotts',
+        /*pagination: {
+            el: '.tabs-slider1 .controls-slider-main__dotts',
             clickable: true,
-        },
+        },*/
         // Arrows
         navigation: {
-            nextEl: '.slider-main .slider-arrow_next',
-            prevEl: '.slider-main .slider-arrow_prev',
-        }
+            nextEl: '.tabs-slider1 .slider-arrow_next',
+            prevEl: '.tabs-slider1 .slider-arrow_prev',
+        },
+        breakpoints: {
+            1275: {
+                slidesPerView: 2.147,
+            },
+            992: {
+                slidesPerView: 2,
+            },
+        },
     });
 }
-
-if (document.querySelector('.slider-rooms__body')) {
-    new Swiper('.slider-rooms__body', {
+if (document.querySelector('.tabs-slider2 .tabs__swiper-body')) {
+    new Swiper('.tabs-slider2 .tabs__swiper-body', {
         observer: true,
         observerParents: true,
-        slidesPerView: 'auto',
-        spaceBetween: 24,
+        slidesPerView: "auto",
+        spaceBetween: 30,
         watchOverflow: true,
         speed: 800,
         loop: true,
         loopAdditionalSlides: 5,
         preloadImages: false,
-        parallax: true,
         // Dotts
-        pagination: {
-            el: '.slider-rooms__dotts',
+        /*pagination: {
+            el: '.tabs-slider1 .controls-slider-main__dotts',
             clickable: true,
-        },
+        },*/
         // Arrows
         navigation: {
-            nextEl: '.slider-rooms .slider-arrow_next',
-            prevEl: '.slider-rooms .slider-arrow_prev',
-        }
+            nextEl: '.tabs-slider2 .slider-arrow_next',
+            prevEl: '.tabs-slider2 .slider-arrow_prev',
+        },
+        breakpoints: {
+            1275: {
+                slidesPerView: 2.147,
+            },
+            992: {
+                slidesPerView: 2,
+            },
+        },
     });
 }
 
+
+/*
 if (document.querySelector('.slider-tips__body')) {
     new Swiper('.slider-tips__body', {
         observer: true,
@@ -151,3 +166,4 @@ if (document.querySelector('.slider-tips__body')) {
     });
 }
 
+*/

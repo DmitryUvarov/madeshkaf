@@ -1,5 +1,159 @@
 // общие стили для кнопок на странице
 
+
+
+._title {
+    font-family: "Cormorant";
+    font-weight: 400;
+    line-height: 41%;
+    color: #937A60;
+    text-align: center;
+    @include adaptive-value("font-size", 68, 39, 1);
+}
 .btn {
+    font-family: "Gilroy";
+    font-weight: 400;
+    line-height: 108%;
+    padding: 14px 28px;
+    background-color: #AF9678;
+    border-radius: 8px;
+    color: #FFFFFF;
+    @include adaptive-value("font-size", 26, 19, 1);
+}
+
+.angle {
+    @media (max-width: $md2+px) {
+        display: none;
+    }
+}
+.angle:first-child {
+
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 130px;
+    height: 130px;
+
+
+    &::before {
+        content: "";
+        position: inherit;
+        width: 120px;
+        height: 2px;
+        top: 2px;
+        right: 30px;
+        background-color: #000;
+    }
+    &::after {
+        content: "";
+        position: inherit;
+        width: 2px;
+        height: 120px;
+        top: 30px;
+        right: 2px;
+        background-color: #000;
+    }
+}
+.angle:last-child {
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    width: 130px;
+    height: 130px;
+
+
+    &::before {
+        content: "";
+        position: inherit;
+        width: 120px;
+        height: 2px;
+        bottom: 2px;
+        left: 30px;
+        background-color: #000;
+    }
+    &::after {
+        content: "";
+        position: inherit;
+        width: 2px;
+        height: 120px;
+        bottom: 30px;
+        left: 2px;
+        background-color: #000;
+    }
+}
+/*
+.angle {
+
+    & > div {
+        position: relative;
+    }
+    width: 130px;
+    height: 130px;
+    position: absolute;
+
+    & span {
+        display: block;
+        width: 120px;
+        height: 2px;
+        background-color: #000;
+        position: absolute;
+    }
+    & span:first-child {
+        &::before {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 120px;
+            width: 2px;
+            background-color: #000;
+        }
+
+    }
+    & span:last-child {
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 2px;
+            width: 120px;
+            background-color: #000;
+        }
+    }
+}
+
+
+
+.angle:first-child {
+    top: 0;
+    right: 0;
+    & span:first-child {
+
+
+    }
+    & span:last-child {
+
+    }
 
 }
+
+
+
+.angle:last-child {
+    bottom: 0;
+    left: 0;
+    & span:first-child {
+        &::before {
+            left: 0;
+            bottom: 0;
+        }
+    }
+    & span:last-child {
+        &::before {
+            left: 0;
+            bottom: 0;
+        }
+    }
+}
+*/
