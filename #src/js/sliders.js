@@ -123,6 +123,29 @@ if (document.querySelector('.tabs-slider2 .tabs__swiper-body')) {
         },
     });
 }
+if (document.querySelector('.slider-reviews .slider-reviews__body')) {
+    new Swiper('.slider-reviews .slider-reviews__body', {
+        observer: true,
+        observerParents: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        watchOverflow: true,
+        speed: 800,
+        loop: true,
+        loopAdditionalSlides: 5,
+        preloadImages: false,
+        // Dotts
+        pagination: {
+            el: '.slider-reviews .slider-pagination',
+            clickable: true,
+        },
+        // Arrows
+        navigation: {
+            nextEl: '.slider-reviews .slider-arrow_next',
+            prevEl: '.slider-reviews .slider-arrow_prev',
+        },
+    });
+}
 
 
 /*

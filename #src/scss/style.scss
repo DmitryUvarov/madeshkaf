@@ -111,6 +111,14 @@ body._lock {
     }
     &__materials {
     }
+    &__offers {
+    }
+    &__stock {
+    }
+    &__reviews {
+    }
+    &__production {
+    }
 }
 
 
@@ -670,12 +678,6 @@ body._lock {
 
 
 
-.tabs__item {
-    display: none;
-}
-.tabs__item._active {
-    display: block;
-}
 
 
 .materials {
@@ -694,11 +696,19 @@ body._lock {
 
 
     .tabs {
+        &__item {
+            display: none;
+        }
+        &__item._active {
+            display: block;
+        }
+
         &__nav {
             display: flex;
             justify-content: space-around;
         }
         &__nav-btn {
+            cursor: pointer;
             font-family: "Gilroy";
             font-weight: 400;
             line-height: 112%;
@@ -848,3 +858,438 @@ body._lock {
 
 }
 
+
+
+
+.offers {
+
+
+    &__container {
+    }
+    &__body {
+        @include adaptive-value("padding-bottom", 105, 60, 1);
+    }
+    &__title {
+        text-align: start;
+        margin-bottom: 65px;
+        line-height: 65%;
+        @media (max-width: 800px) {
+            margin-bottom: 60px;
+        }
+    }
+    &__items {
+        @media (max-width: 800px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 30px;
+            row-gap: 60px;
+        }
+        @media (max-width: $md4+px) {
+            row-gap: 40px;
+        }
+        @media (min-width: 800px) {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 0 -40px;
+        }
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @media (min-width: 800px) {
+            margin: 30px 40px 45px;
+        }
+        @media (max-width: $md3+px) {
+            &:nth-child(5), &:last-child {
+                display: none;
+            }
+        }
+    }
+    .offers__more {
+        display: flex;
+        justify-content: center;
+            & a {
+            font-family: 'Gilroy';
+            font-weight: 400;
+            line-height: 100%;
+            color: #937A60;
+            text-align: center;
+            position: relative;
+            @include adaptive-value("margin-top", 45, 30, 1);
+            @include adaptive-value("font-size", 30, 20, 1);
+            &::after {
+                position: absolute;
+                content: "";
+                width: 130%;
+                height: 2px;
+                bottom: -4px;
+                left: -15%;
+                background-color: #937A60;
+            }
+        }
+    }
+}
+
+.item-offers {
+
+
+    &__img {
+        position: relative;
+        & img {
+            max-width: 340px;
+            width: 100%;
+            display: block;
+        }
+
+    }
+    .mark {
+        position: absolute;
+        top: -24px;
+        left: -25px;
+        font-family: "Gilroy";
+        font-weight: 400;
+        font-size: 19px;
+        line-height: 147%;
+        color: #FFFFFF;
+        padding: 10px 15px;
+        background: #11100E;
+        @include adaptive-value("font-size", 19, 11, 1);
+        @media (max-width: $md2+px) {
+            left: 0;
+            padding: 6px 10px;
+            top: -12px;
+        }
+    }
+    &__text {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 25px;
+    }
+    &__title {
+        font-family: "Gilroy";
+        font-weight: 400;
+        line-height: 93%;
+        color: #000000;
+        @include adaptive-value("font-size", 30, 16, 1);
+    }
+    &__price {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+    }
+    .price {
+        font-family: "Gilroy";
+        font-weight: 400;
+        line-height: 100%;
+        color: #937A60;
+        @include adaptive-value("font-size", 28, 13, 1);
+        &.new {
+            color: #E52B2B;
+        }
+    }
+
+    .old-price {
+        position: absolute;
+        top: -20px;
+        right: 0;
+        font-family: "Gilroy";
+        font-weight: 400;
+        @include adaptive-value("font-size", 13, 11, 1);
+        line-height: 200%;
+        color: #937A60;
+
+        &.red {
+            color: #E52B2B;
+        }
+    }
+}
+
+
+
+.stock {
+    background: #161513;
+
+    &__container {
+        @media (min-width: $md3+px) {
+            background-image: url('../img/stock/01.png');
+            background-repeat: no-repeat;
+            background-position: top 50% right;
+        }
+    }
+    &__body {
+        @include adaptive-value("padding-top", 125, 60, 1);
+        @include adaptive-value("padding-bottom", 145, 60, 1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__title {
+        font-family: "Cormorant";
+        font-weight: 400;
+        line-height: 72%;
+        color: #FFFFFF;
+        @include adaptive-value("font-size", 68, 39, 1);
+    }
+    &__subtitle {
+        font-family: "Gilroy";
+        font-weight: 400;
+        line-height: 93%;
+        color: #FFFFFF;
+        @include adaptive-value("font-size", 30, 17, 1);
+        @include adaptive-value("margin-top", 30, 25, 1);
+        @include adaptive-value("margin-bottom", 45, 25, 1);
+    }
+    &__form {
+        display: flex;
+        max-width: 760px;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        max-width: 760px;
+        width: 100%;
+    }
+}
+
+.form-stock {
+    &__item {
+
+    }
+    &__input {
+        width: 100%;
+        max-height: 64px;
+        padding: 20px 35px;
+        background: #FFFFFF;
+        border-radius: 8px;
+        font-family: "Gilroy";
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 93%;
+        @include adaptive-value("font-size", 30, 14, 1);
+        color: rgba(17, 16, 14, 0.46);
+        @media (max-width: $md4+px) {
+            padding: 10px 15px;
+        }
+        &:focus {
+            background: #FFFFFF;
+            color: rgba(17, 16, 14, 1);
+        }
+    }
+    &__btn {
+        max-width: 286px;
+        @include adaptive-value("margin-top", 55, 30, 1);
+    }
+}
+
+
+
+
+.reviews {
+
+
+    &__container {
+    }
+    &__body {
+        @include adaptive-value("padding-top", 150, 80, 1);
+        @include adaptive-value("padding-bottom", 150, 80, 1);
+    }
+    &__title {
+        text-align: start;
+        @include adaptive-value("margin-bottom", 80, 40, 1);
+    }
+    &__slider {
+        position: relative;
+    }
+}
+.slider-reviews {
+
+
+    &__control {
+    }
+    .slider-pagination {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+    }
+    .swiper-pagination-bullet {
+        width: 26px;
+        height: 26px;
+        border: 1px solid #937A60;
+        background: transparent;
+        margin: 0 9px;
+        transition: all 0.3s ease 0s;
+        @media (max-width: $md3+px) {
+            width: 16px;
+            height: 16px;
+        }
+    }
+    .swiper-pagination-bullet-active {
+        background: #937A60;
+
+    }
+    .slider-arrows {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        top: 50%;
+        left: 0;
+        @media (max-width: $md3+px) {
+            display: none;
+        }
+    }
+    .slider-arrow {
+        cursor: pointer;
+        z-index: 10;
+        &::before {
+            color: #937A60;
+            font-size: 36px;
+        }
+    }
+    .slider-arrow_prev {
+        &::before {
+            transform: rotate(-90deg);
+        }
+        @media (min-width: 1300px) {
+            margin-left: -55px;
+        }
+    }
+    .slider-arrow_next {
+        &::before {
+            transform: rotate(90deg);
+        }
+        @media (min-width: 1300px) {
+            margin-right: -55px;
+        }
+    }
+
+    &__body {
+        overflow: hidden;
+    }
+    &__slide {
+    }
+}
+.slide-reviews {
+
+    &__body {
+        padding-bottom: 55px;
+        @media (min-width: $md3+px) {
+            padding-right: 50px;
+            padding-left: 50px;
+        }
+        @media (max-width: $md3+px) {
+            padding-bottom: 45px;
+        }
+    }
+    &__name {
+        font-family: "Gilroy";
+        font-weight: 400;
+        line-height: 127%;
+        color: #000000;
+        @include adaptive-value("font-size", 37, 22, 1);
+        @include adaptive-value("margin-bottom", 60, 24, 1);
+    }
+    &__text {
+        font-family: "Gilroy";
+        font-weight: 400;
+        line-height: 133%;
+        color: #000000;
+        @include adaptive-value("font-size", 30, 19, 1);
+    }
+}
+
+
+
+
+.production {
+
+    &__container {
+        max-width: 1470px;
+        width: 100%;
+        padding: 0 15px;
+        margin: 0 auto;
+
+        background-repeat: no-repeat;
+        background-position: bottom left, bottom right;
+        @media (min-width: 1180px) {
+            background-image: url('../img/production/01.jpg'), url('../img/production/02.jpg');
+            background-size: 37.7%, 60.83%;
+        }
+        @media (max-width: 1180px) {
+            background-image: url('../img/production/011.jpg'), url('../img/production/022.jpg');
+            background-size: 37.8%, 60.67%;
+        }
+    }
+    &__body {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        max-width: 1220px;
+        margin: 0 auto;
+    }
+    &__title {
+        text-align: start;
+        max-width: 1220px;
+        margin: 0 auto 115px;
+        padding: 0 15px;
+        @media (max-width: $md3+px) {
+            margin-bottom: 85px;
+        }
+        @media (max-width: $md3+px) {
+            margin-bottom: 60px;
+        }
+    }
+    &__content {
+        @include adaptive-value("padding", 55, 25, 1);
+        margin-right: auto;
+        margin-left: auto;
+        @include adaptive-value("margin-top", 130, 45, 1);
+        @include adaptive-value("margin-bottom", 130, 45, 1);
+        background: rgba(53, 53, 53, 0.24);
+        // Если браузер поддерживает свойство backdrop-filter
+        @supports ((-webkit-backdrop-filter: blur(32px)) or (backdrop-filter: blur(32px))) {
+            background: rgba(53, 53, 53, 0.24);
+            backdrop-filter: blur(32px);
+        }
+    }
+    &__items {
+    }
+    & ol li {
+        counter-increment: muffins;
+      }
+    & ol li:before {
+        content: counter(muffins) "";
+      }
+    & ol {
+        list-style: none;
+        counter-reset: muffins;
+      }
+    &__item {
+        font-family: "Gilroy";
+        font-weight: 400;
+        line-height: 100%;
+        text-align: center;
+        color: #FFFFFF;
+        position: relative;
+        @include adaptive-value("font-size", 30, 20, 1);
+        &:not(:last-child) {
+            @include adaptive-value("margin-bottom", 35, 30, 1);
+        }
+        &::before {
+            content: "";
+            display: inline-block;
+            margin: 0 5px 0 0;
+            font-family: "Gilroy";
+            font-weight: 400;
+            font-size: 37px;
+            line-height: 76%;
+            text-align: center;
+            color: #FFFFFF;
+
+        }
+    }
+}
