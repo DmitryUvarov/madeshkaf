@@ -465,6 +465,8 @@ body._lock {
 .footer__img-block img {
   max-width: 100%;
   min-width: 160px;
+  border-radius: 9px;
+  overflow: hidden;
 }
 
 ._title {
