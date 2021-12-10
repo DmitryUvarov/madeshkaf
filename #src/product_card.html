@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>MADESHKAF</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        @@include('_header.html', {
+        "nav": "2"
+        })
+        <!--ШАПКА-->
+        <main class="page">
+            <section class="page__crums crums">
+                <div class="crums__container _container">
+                    <div class="crums__body">
+                        <ul class="crums__items">
+                            <li class="crums__item"><a href="index.html" class="crums__link">Главная</a></li>
+                            <li class="crums__item"><a href="#" class="crums__link">Каталог</a></li>
+                            <li class="crums__item"><a href="#" class="crums__link">Шкаф-купе</a></li>
+                            <li class="crums__item"><a href="#" class="crums__link">Шкаф Comfort/3</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="page__card card">
+                <div class="card__container _container">
+                    <div class="card__body">
+                        <div class="card__img">
+                            <div class="card__tabs tabs">
+                                <div class="tabs__content">
+                                    <div class="tabs__item" id="tab_1">
+                                        <img src="img/card/011.jpg" alt="">
+                                    </div>
+                                    <div class="tabs__item" id="tab_2">
+                                        <img src="img/card/011.jpg" alt="">
+                                    </div>
+                                    <div class="tabs__item" id="tab_3">
+                                        <img src="img/card/011.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="tabs__nav">
+                                    <button class="tabs__nav-btn" type="button" data-tab="#tab_1">
+                                        <img src="img/card/01.jpg" alt="">
+                                        <div class="mask"></div>
+                                    </button>
+                                    <button class="tabs__nav-btn" type="button" data-tab="#tab_2">
+                                        <img src="img/card/02.jpg" alt="">
+                                        <div class="mask"></div>
+                                    </button>
+                                    <button class="tabs__nav-btn" type="button" data-tab="#tab_3">
+                                        <img src="img/card/03.jpg" alt="">
+                                        <div class="mask"></div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__text text-card">
+                            <h4 class="text-card__title">Шкаф Comfort/3</h4>
+                            <p class="text-card__description">Шкафы-купе в стиле минимализма очень популярны на сегодняшний день, т. к. с их помощью можно скрыть стену, зрительно расширить небольшое помещение, сэкономить пространство. Внешняя сдержанность минималистского шкафа-купе позволяет ему лаконично вписаться в интерьер, добавить элегантности и изысканности. Такая мебель подойдет тем, кто ценит четкость линий, простоту, не приемлет броских цветов и «нагруженности».</p>
+                            <ul class="text-card__materials">
+                                <li class="text-card__material">Материал : ЛДСП</li>
+                                <li class="text-card__material">️Вставка на дверях: зеркало</li>
+                                <li class="text-card__material">Размер : 260/160/60</li>
+                            </ul>
+                            <div class="text-card__buttons">
+                                <button class="text-card__btn btn btn_transperent">Цена: 1500р</button>
+                                <a href="#order" class="text-card__btn btn _popup-link">Заказать</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <div class="popup popup_order">
+                <div class="popup__content">
+                    <div class="popup__body">
+                        <form action="#" class="popup__form form-popup">
+                            <p class="popup__text">Вы получите электронное письмо с подтверждением заказа и наши сотрудники свяжутся с Вами для уточнения деталей заказа</p>
+                            <div class="form-popup__item">
+                                <input class="form-popup__input" type="text" placeholder="Введите email">
+                            </div>
+                            <div class="form-popup__item">
+                                <input class="form-popup__input" type="text" placeholder="Введите номер телефона">
+                            </div>
+                            <div class="form-popup__item">
+                                <button class="form-popup__btn btn" type="button">Заказать </button>
+                            </div>
+                        </form>
+                        <div class="popup__close"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        @@include('_footer.html')
+        <!--ПОДВАЛ-->
+    </div>
+
+
+    @@include('_js.html')
+</body>
+
+</html>

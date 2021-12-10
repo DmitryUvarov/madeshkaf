@@ -14,6 +14,7 @@
 @import "icons";
 // \Иконочные шрифты SVG =============================================================================================================
 
+@import "popup";
 
 // Шрифт по умолчанию =============================================================================================================
 $FontFamily: "Gilroy";
@@ -119,6 +120,16 @@ body._lock {
     }
     &__production {
     }
+    &__sec2 {
+    }
+    &__cost {
+    }
+    &__contacts {
+    }
+    &__crums {
+    }
+    &__card {
+    }
 }
 
 
@@ -159,7 +170,7 @@ body._lock {
         position: relative;
         z-index: 5;
         @media (max-width: $md2+px) {
-            padding: 200px 0 95px;
+            padding: 170px 0 95px;
 
             & * {
                 position: relative;
@@ -169,7 +180,7 @@ body._lock {
                 position: absolute;
                 width: calc(100% + 30px);
                 height: 65%;
-                top: 175px;
+                top: 145px;
                 left: -15px;
                 background: rgba(53, 53, 53, 0.24);
                     // Если браузер поддерживает свойство backdrop-filter
@@ -195,7 +206,7 @@ body._lock {
             left: -65px;
             transform: rotate(-12deg);
         }
-        @media (max-width: $md3+px) {
+        @media (max-width: $md2+px) {
             margin-bottom: 25px;
             &::before {
                 top: -80px;
@@ -457,40 +468,6 @@ body._lock {
         color: #937A60;
         @include adaptive-value("padding-top", 145, 50, 1);
         @include adaptive-value("font-size", 63, 39, 1);
-    }
-    &__items {
-        display: grid;
-        @media (min-width: 1100px) {
-            grid-template-columns: repeat(6, 1fr);
-        }
-        @media (min-width: $md3+px) {
-            grid-template-columns: repeat(3, 1fr);
-            column-gap: 25px;
-        }
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 30px;
-
-    }
-    &__item {
-        padding-top: 80px;
-        @media (max-width: $md2+px) {
-            padding-top: 40px;
-        }
-    }
-    &__item-img-block {
-        padding-bottom: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-    }
-    &__item-text {
-        font-family: "Gilroy";
-        font-weight: 400;
-        line-height: 125%;
-        color: #000000;
-        text-align: center;
-        @include adaptive-value("font-size", 26, 18, 1);
     }
 }
 
@@ -977,7 +954,8 @@ body._lock {
     &__price {
         position: relative;
         display: flex;
-        align-items: flex-end;
+        flex-direction: column;
+        justify-content: flex-end;
     }
     .price {
         font-family: "Gilroy";
@@ -990,16 +968,16 @@ body._lock {
         }
     }
 
-    .old-price {
+    .old-price {/*
         position: absolute;
         top: -20px;
-        right: 0;
+        right: 0;*/
         font-family: "Gilroy";
         font-weight: 400;
         @include adaptive-value("font-size", 13, 11, 1);
         line-height: 200%;
         color: #937A60;
-
+        text-align: right;
         &.red {
             color: #E52B2B;
         }
@@ -1176,6 +1154,7 @@ body._lock {
 .slide-reviews {
 
     &__body {
+        cursor: pointer;
         padding-bottom: 55px;
         @media (min-width: $md3+px) {
             padding-right: 50px;
@@ -1293,3 +1272,316 @@ body._lock {
         }
     }
 }
+
+
+
+.sec2 {
+
+
+    &__container {
+    }
+    &__body {
+        @include adaptive-value("padding-top", 150, 50, 1);
+        @include adaptive-value("padding-bottom", 150, 40, 1);
+    }
+    &__title {
+        text-align: start;
+        @include adaptive-value("margin-bottom", 90, 40, 1);
+    }
+    .work__items {
+        @media (max-width: $md3+px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    .work__item {
+        @media (max-width: $md3+px) {
+            display: flex;
+            align-items: center;
+        }
+    }
+    .work__item-text {
+        @media (max-width: $md3+px) {
+            padding-left: 55px;
+            flex: 1 1 auto;
+        }
+    }
+}
+
+
+
+
+.cost {
+    background-color: #11100E;
+    @media (min-width: $md2+px) {
+        background-image: url('../img/cost/01.jpg');
+        background-repeat: no-repeat;
+        background-position: top left;
+    }
+    @media (min-width: 1450px) {
+        background-size: 40%;
+    }
+
+    @include adaptive-value("padding-top", 285, 50, 1);
+    @include adaptive-value("padding-bottom", 285, 40, 1);
+    &__container {
+    }
+    &__body {
+        @media (min-width: $md2+px) {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+    }
+    &__img-block {
+        & img {
+            display: block;
+            max-width: 578px;
+            width: 100%;
+        }
+    }
+    &__text {
+        @media (max-width: $md2+px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        @media (min-width: $md2+px) {
+            padding: 40px 30px;
+        }
+        @media (max-width: $md1+px) and (min-width: $md2+px) {
+            background: rgba(53, 53, 53, 0.24);
+            // Если браузер поддерживает свойство backdrop-filter
+            @supports ((-webkit-backdrop-filter: blur(32px)) or (backdrop-filter: blur(32px))) {
+                background: rgba(53, 53, 53, 0.24);
+                backdrop-filter: blur(32px);
+            }
+        }
+    }
+    &__title {
+        font-family: "Cormorant";
+        font-weight: 400;
+        line-height: 104%;
+        color: #FFFFFF;
+        @include adaptive-value("font-size", 68, 39, 1);
+        @media (min-width: $md2+px) {
+            max-width: 600.57px;
+        }
+    }
+    &__subtitle {
+        padding: 26px 0 34px;
+        @media (min-width: $md2+px) {
+            max-width: 719px;
+
+            & img {
+                display: none;
+            }
+        }
+        @media (max-width: $md2+px) {
+            display: flex;
+            align-items: center;
+            padding: 30px 0 40px;
+        }
+        & img {
+            max-width: 500px;
+            width: 100%;
+        }
+        & span {
+            font-family: "Gilroy";
+            font-weight: 400;
+            line-height: 123%;
+            color: #FFFFFF;
+            text-shadow: 1px -1px 7px rgba(186, 217, 0, 0.36);
+            @include adaptive-value("font-size", 30, 16, 1);
+            @media (max-width: $md2+px) {
+                padding-left: 30px;
+            }
+        }
+    }
+    &__btn {
+        padding: 12px 41px;
+    }
+    .btn {
+    }
+}
+
+
+
+
+
+.contacts {
+
+
+    &__container {
+    }
+    &__title {
+        text-align: start;
+        @include adaptive-value("margin-top", 150, 50, 1);
+    }
+    &__body {
+        @include adaptive-value("padding-top", 52, 40, 1);
+        @include adaptive-value("padding-bottom", 190, 60, 1);
+        @media (min-width: $md2+px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+        }
+        @media (max-width: $md2+px) {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+    }
+    &__text {
+    }
+    &__form {
+    }
+}
+
+.text-contacts {
+
+    &__items {
+        @media (max-width: $md2+px) {
+            margin-top: 40px;
+        }
+    }
+    &__item {
+        display: grid;
+        @include adaptive-value("margin-bottom", 50, 20, 1);
+        & span, & a{
+            font-family: "Gilroy";
+            font-weight: 400;
+            line-height: 133%;
+            color: #000000;
+            @include adaptive-value("font-size", 30, 20, 1);
+        }
+        & a {
+            @media (any-hover: hover) {
+                &:hover {
+                    transition: color 0.3s ease 0s;
+                    color: #AF9678;
+                }
+            }
+        }
+    }
+
+    &__social {
+        display: flex;
+
+        ._icon-viber {
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    color: #665CAC;
+                }
+            }
+        }
+    }
+    ._icon-telegram {
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    color: #0088cc;
+                }
+            }
+        }
+    }
+    ._icon-whatsapp {
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    color: #25D366;
+                }
+            }
+        }
+    }
+    }
+    .social {
+
+        &::before {
+            transition: color 0.3s ease 0s;
+            color: #AF9678;
+            font-size: 30px;
+            padding-right: 30px;
+        }
+    }
+}
+
+
+.form-contacts {
+    background-image: url('../img/contacts/01.jpg');
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 540px;
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include adaptive-value("padding-top", 65, 50, 1);
+        @include adaptive-value("padding-bottom", 65, 50, 1);
+        @include adaptive-value("padding-left", 65, 20, 1);
+        @include adaptive-value("padding-right", 65, 20, 1);
+        background: rgba(53, 53, 53, 0.24);
+        // Если браузер поддерживает свойство backdrop-filter
+        @supports ((-webkit-backdrop-filter: blur(32px)) or (backdrop-filter: blur(32px))) {
+            background: rgba(53, 53, 53, 0.24);
+            backdrop-filter: blur(32px);
+        }
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    &__title {
+        font-family: "Gilroy";
+        font-weight: 400;
+        line-height: 100%;
+        color: #FFFFFF;
+        text-align: center;
+        @include adaptive-value("margin-bottom", 35, 25, 1);
+        @include adaptive-value("font-size", 30, 20, 1);
+    }
+    &__item {
+        &:not(:last-child) {
+            @include adaptive-value("margin-bottom", 30, 15, 1);
+        }
+    }
+    &__input {
+        padding: 14px 29px;
+        background: #fff;
+        font-family: "Gilroy";
+        font-weight: 400;
+        line-height: 108%;
+        color: rgba(0, 0, 0, 0.47);
+        border-radius: 10px;
+        @include adaptive-value("width", 415, 260, 1);
+        @include adaptive-value("font-size", 26, 19, 1);
+        &:focus {
+            background: #fff;
+            outline: none;
+        }
+        /*@media (max-width: $md2+px) {
+            width: 280px;
+        }*/
+    }
+    &__textarea {
+        resize: vertical;
+        min-height: 242px;
+        border: 0;
+        @include adaptive-value("width", 415, 260, 1);
+        @media (max-width: $md2+px) {
+            min-height: 160px;
+        }
+    }
+    &__btn {
+        @include adaptive-value("margin-top", 20, 5, 1);
+    }
+    .btn {
+        padding: 14px 60px;
+    }
+}
+
+
+
+
+
+
+@import "_product_card";

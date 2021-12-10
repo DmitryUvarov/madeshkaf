@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -7,12 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.min.css">
-    <title></title>
+    <title>MADESHKAF</title>
 </head>
 
 <body>
     <div class="wrapper">
-        @@include('_header.html')
+        @@include('_header.html', {
+        "nav": ""
+        })
         <!--ШАПКА-->
         <main class="page">
             <section class="page__main main">
@@ -84,60 +86,60 @@
                         <h2 class="about__title _title">О нас</h2>
                         <p>Мы рады видеть вас на нашем сайте, здесь представлены примеры наших работ и мебель, которую мы можем изготовить, в том числе по вашим индивидуальным запросам. Мы поможем сделать вашу квартиру, дом или офис более комфортным, функциональным и привлекательным. В производстве мебели мы используем лучшие материалы и современное оборудование, чтобы создавать по-настоящему красивую, удобную и качественную мебель.</p>
                         <h5 class="about__subtitle">Почему более 14 лет клиенты выбирают нас:</h5>
-                        <div class="about__items">
-                            <div class="about__item">
-                                <div class="about__item-img-block">
+                        <div class="work__items">
+                            <div class="work__item">
+                                <div class="work__item-img-block">
                                     <picture>
                                         <source srcset="img/about/01.png" media="(min-width: 479.98px)">
                                         <img src="img/about/011.png" alt="">
                                     </picture>
                                 </div>
-                                <div class="about__item-text">Рассрочки</div>
+                                <div class="work__item-text">Рассрочки</div>
                             </div>
-                            <div class="about__item">
-                                <div class="about__item-img-block">
+                            <div class="work__item">
+                                <div class="work__item-img-block">
                                     <picture>
                                         <source srcset="img/about/02.png" media="(min-width: 479.98px)">
                                         <img src="img/about/022.png" alt="">
                                     </picture>
                                 </div>
-                                <div class="about__item-text">Заводские цены</div>
+                                <div class="work__item-text">Заводские цены</div>
                             </div>
-                            <div class="about__item">
-                                <div class="about__item-img-block">
+                            <div class="work__item">
+                                <div class="work__item-img-block">
                                     <picture>
                                         <source srcset="img/about/03.png" media="(min-width: 479.98px)">
                                         <img src="img/about/033.png" alt="">
                                     </picture>
                                 </div>
-                                <div class="about__item-text">Оперативные сроки</div>
+                                <div class="work__item-text">Оперативные сроки</div>
                             </div>
-                            <div class="about__item">
-                                <div class="about__item-img-block">
+                            <div class="work__item">
+                                <div class="work__item-img-block">
                                     <picture>
                                         <source srcset="img/about/04.png" media="(min-width: 479.98px)">
                                         <img src="img/about/044.png" alt="">
                                     </picture>
                                 </div>
-                                <div class="about__item-text">Акции, скидки, бонусы</div>
+                                <div class="work__item-text">Акции, скидки, бонусы</div>
                             </div>
-                            <div class="about__item">
-                                <div class="about__item-img-block">
+                            <div class="work__item">
+                                <div class="work__item-img-block">
                                     <picture>
                                         <source srcset="img/about/05.png" media="(min-width: 479.98px)">
                                         <img src="img/about/055.png" alt="">
                                     </picture>
                                 </div>
-                                <div class="about__item-text">Европейское качество</div>
+                                <div class="work__item-text">Европейское качество</div>
                             </div>
-                            <div class="about__item">
-                                <div class="about__item-img-block">
+                            <div class="work__item">
+                                <div class="work__item-img-block">
                                     <picture>
                                         <source srcset="img/about/06.png" media="(min-width: 479.98px)">
                                         <img src="img/about/066.png" alt="">
                                     </picture>
                                 </div>
-                                <div class="about__item-text">Бесплатная 3d визуализация</div>
+                                <div class="work__item-text">Бесплатная 3d визуализация</div>
                             </div>
                         </div>
                     </div>
@@ -148,7 +150,7 @@
                     <div class="catalog__body">
                         <h2 class="catalog__title _title">Каталог</h2>
                         <div class="catalog__items">
-                            <div class="catalog__item item-catalog">
+                            <a href="product_card.html" class="catalog__item item-catalog">
                                 <div class="item-catalog__img-block">
                                     <div class="angle"></div>
                                     <img src="img/catalog/01.jpg" alt="">
@@ -157,8 +159,8 @@
                                     </div>
                                     <div class="angle"></div>
                                 </div>
-                            </div>
-                            <div class="catalog__item item-catalog md2">
+                            </a>
+                            <a href="product_card.html" class="catalog__item item-catalog md2">
                                 <div class="item-catalog__img-block">
                                     <div class="angle"></div>
                                     <picture>
@@ -170,8 +172,8 @@
                                     </div>
                                     <div class="angle"></div>
                                 </div>
-                            </div>
-                            <div class="catalog__item item-catalog">
+                            </a>
+                            <a href="product_card.html" class="catalog__item item-catalog">
                                 <div class="item-catalog__img-block">
                                     <div class="angle"></div>
                                     <img src="img/catalog/03.jpg" alt="">
@@ -180,7 +182,7 @@
                                     </div>
                                     <div class="angle"></div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -264,8 +266,8 @@
                                 <div class="item-offers__text">
                                     <div class="item-offers__title">Шкаф Riviera/1</div>
                                     <div class="item-offers__price">
-                                        <p class="price">1000p</p>
                                         <span class="old-price"></span>
+                                        <p class="price">1000p</p>
                                     </div>
                                 </div>
                             </a>
@@ -277,8 +279,8 @@
                                 <div class="item-offers__text">
                                     <div class="item-offers__title">Шкаф Comfort/5</div>
                                     <div class="item-offers__price">
-                                        <p class="price new">900p</p>
                                         <span class="old-price">1800p</span>
+                                        <p class="price new">900p</p>
                                     </div>
                                 </div>
                             </a>
@@ -290,8 +292,8 @@
                                 <div class="item-offers__text">
                                     <div class="item-offers__title">Шкаф WingLine</div>
                                     <div class="item-offers__price">
-                                        <p class="price new">840p</p>
                                         <span class="old-price">1200p</span>
+                                        <p class="price new">840p</p>
                                     </div>
                                 </div>
                             </a>
@@ -303,8 +305,8 @@
                                 <div class="item-offers__text">
                                     <div class="item-offers__title">Шкаф Riviera/5</div>
                                     <div class="item-offers__price">
-                                        <p class="price">80p/мес</p>
                                         <span class="old-price red">24 мес</span>
+                                        <p class="price">80p/мес</p>
                                     </div>
                                 </div>
                             </a>
@@ -316,8 +318,8 @@
                                 <div class="item-offers__text">
                                     <div class="item-offers__title">Шкаф Comfort/3</div>
                                     <div class="item-offers__price">
-                                        <p class="price new">420p</p>
                                         <span class="old-price">700p</span>
+                                        <p class="price new">420p</p>
                                     </div>
                                 </div>
                             </a>
@@ -329,8 +331,8 @@
                                 <div class="item-offers__text">
                                     <div class="item-offers__title">Шкаф WingLine/8</div>
                                     <div class="item-offers__price">
-                                        <p class="price new">510p</p>
                                         <span class="old-price">600p</span>
+                                        <p class="price new">510p</p>
                                     </div>
                                 </div>
                             </a>
@@ -409,6 +411,144 @@
                     </div>
                 </div>
             </section>
+            <section class="page__sec2 sec2">
+                <div class="sec2__container _container">
+                    <div class="sec2__body">
+                        <h2 class="sec2__title _title">Как мы работаем</h2>
+                        <div class="work__items">
+                            <div class="work__item">
+                                <div class="work__item-img-block">
+                                    <picture>
+                                        <source srcset="img/sec2/01.png" media="(min-width: 479.98px)">
+                                        <img src="img/sec2/011.png" alt="">
+                                    </picture>
+                                </div>
+                                <div class="work__item-text"> Заказать выезд дизайнера</div>
+                            </div>
+                            <div class="work__item">
+                                <div class="work__item-img-block">
+                                    <picture>
+                                        <source srcset="img/sec2/02.png" media="(min-width: 479.98px)">
+                                        <img src="img/sec2/022.png" alt="">
+                                    </picture>
+                                </div>
+                                <div class="work__item-text">Обмер</div>
+                            </div>
+                            <div class="work__item">
+                                <div class="work__item-img-block">
+                                    <picture>
+                                        <source srcset="img/sec2/03.png" media="(min-width: 479.98px)">
+                                        <img src="img/sec2/033.png" alt="">
+                                    </picture>
+                                </div>
+                                <div class="work__item-text">Построение проекта</div>
+                            </div>
+                            <div class="work__item">
+                                <div class="work__item-img-block">
+                                    <picture>
+                                        <source srcset="img/sec2/04.png" media="(min-width: 479.98px)">
+                                        <img src="img/sec2/044.png" alt="">
+                                    </picture>
+                                </div>
+                                <div class="work__item-text">Оформление договора</div>
+                            </div>
+                            <div class="work__item">
+                                <div class="work__item-img-block">
+                                    <picture>
+                                        <source srcset="img/sec2/05.png" media="(min-width: 479.98px)">
+                                        <img src="img/sec2/055.png" alt="">
+                                    </picture>
+                                </div>
+                                <div class="work__item-text">Производство</div>
+                            </div>
+                            <div class="work__item">
+                                <div class="work__item-img-block">
+                                    <picture>
+                                        <source srcset="img/sec2/06.png" media="(min-width: 479.98px)">
+                                        <img src="img/sec2/066.png" alt="">
+                                    </picture>
+                                </div>
+                                <div class="work__item-text">Установка</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="page__cost cost">
+                <div class="cost__container _container">
+                    <div class="cost__body">
+                        <div class="cost__text">
+                            <h4 class="cost__title">Узнайте стоимость мебели</h4>
+                            <div class="cost__subtitle"><img src="img/cost/01.jpg" alt=""><span>Ответь на вопросы,получи скидку и бесплатный дизайн проект</span></div>
+                            <button class="cost__btn btn">Пройти тест</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="page__contacts contacts">
+                <div class="contacts__container _container">
+                    <h2 class="contacts__title _title">Контакты</h2>
+                    <div class="contacts__body">
+                        <div class="contacts__text text-contacts">
+                            <div class="text-contacts__items">
+                                <div class="text-contacts__item">
+                                    <span>Адрес офиса:</span>
+                                    <span>г.Минск ул П Бровки 45</span>
+                                </div>
+                                <div class="text-contacts__item">
+                                    <span>Номер телефона:</span>
+                                    <a href="tel:+375259199290">+375-25-919-92-90</a>
+                                </div>
+                                <div class="text-contacts__item">
+                                    <span>Email:</span>
+                                    <a href="mail:info@gmail.com">info@gmail.com</a>
+                                </div>
+                                <div class="text-contacts__item">
+                                    <span>Режим работы:</span>
+                                    <span>пн-вс 9:00-21:00</span>
+                                </div>
+                            </div>
+                            <div class="text-contacts__social">
+                                <a href="#" class="social _icon-viber"></a>
+                                <a href="#" class="social _icon-telegram"></a>
+                                <a href="#" class="social _icon-whatsapp"></a>
+                            </div>
+                        </div>
+                        <form action="#" class="contacts__form form-contacts">
+                            <div class="form-contacts__body">
+                                <div class="form-contacts__title">Заказать консультацию</div>
+                                <div class="form-contacts__item">
+                                    <input class="form-contacts__input" type="text" placeholder="Номер телефона">
+                                </div>
+                                <div class="form-contacts__item">
+                                    <input class="form-contacts__input" type="text" placeholder="Email">
+                                </div>
+                                <div class="form-contacts__item">
+                                    <textarea class="form-contacts__input form-contacts__textarea" placeholder="Комментарии"></textarea>
+                                </div>
+                                <div class="form-contacts__item">
+                                    <button class="form-contacts__btn btn" type="button">Заказать</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <!--
+            <a href="#one" class="_popup-link">OPEN POPUP</a>
+
+            <div class="popup popup_one">
+                <div class="popup__body">
+                    <div class="popup__content">NS JNRHSC POPUP
+                        <a href="#" class="popup__close">pfrhsbnm</a>
+                    </div>
+                </div>
+            </div>
+        -->
         </main>
         @@include('_footer.html')
         <!--ПОДВАЛ-->

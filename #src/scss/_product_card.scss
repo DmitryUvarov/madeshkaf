@@ -1,0 +1,260 @@
+.crums {
+
+    &__container {
+    }
+    &__body {
+        @include adaptive-value("margin-top", 160, 75, 1);
+        @include adaptive-value("margin-bottom", 30, 20, 1);
+    }
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -8px;
+    }
+    &__item {
+        position: relative;
+        margin: 0 8px;
+        &:not(:last-child) {
+            &::after {
+                content: "/";
+                position: absolute;
+                top: 50%;
+                right: -12px;
+                transform: translateY(-50%);
+            }
+        }
+    }
+    &__link {
+        font-family: "Gilroy";
+        font-weight: 400;
+        line-height: 300%;
+        color: #11100E;
+        white-space: pre;
+        @include adaptive-value("font-size", 14, 12, 1);
+        transition: all 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+
+
+
+.card {
+
+    &__container {
+    }
+    &__body {
+        display: flex;
+        @media (max-width: $md2+px) {
+            flex-direction: column;
+            align-items: center;
+        }
+        @include adaptive-value("margin-bottom", 160, 60, 1);
+    }
+    &__img {
+    }
+    &__text {
+        @media (max-width: $md2+px) {
+            @include adaptive-value("margin-top", 50, 40, 1);
+        }
+        @media (min-width: $md2+px) {
+            margin-left: 45px;
+        }
+    }
+    &__tabs {
+
+        .tabs__content {
+        }
+        .tabs__item {
+
+
+            & img {
+                max-width: 500px;
+                display: block;
+                @media (max-width: $md3+px) {
+                    width: 100%;
+                }
+            }
+
+            display: none;
+            &._active {
+                display: block;
+            }
+        }
+        .tabs__nav {
+            display: flex;
+
+            & img {
+                max-width: 150px;
+                width: 100%;
+                display: block;
+            }
+        }
+        .tabs__nav-btn {
+            @include adaptive-value("margin-top", 25, 15, 1);
+            &:not(:last-child) {
+                @include adaptive-value("margin-right", 25, 10, 1);
+            }
+            position: relative;
+            cursor: url("../img/cursor.svg"), pointer;
+            & .mask {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: rgba(132, 108, 82, 0.64);
+                opacity: 0;
+                transition: opacity 0.3s ease 0s;
+            }
+            @media (any-hover: hover) {
+                &:hover {
+                    & .mask {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.text-card {
+    &__title {
+        font-family: "Gilroy";
+        font-weight: 400;
+        line-height: 100%;
+        color: #000000;
+        margin-bottom: 35px;
+        @include adaptive-value("font-size", 55, 30, 1);
+    }
+    &__description {
+        font-family: "Gilroy";
+        font-weight: 400;
+        line-height: 130%;
+        color: #000000;
+        padding-bottom: 30px;
+        border-bottom: 2px solid #AF9678;
+        @include adaptive-value("font-size", 25, 15, 1);
+    }
+    // ul
+    &__materials {
+        @include adaptive-value("margin-top", 40, 20, 1);
+        @include adaptive-value("margin-bottom", 40, 20, 1);
+    }
+    // li
+    &__material {
+        font-family: "Gilroy";
+        font-weight: 400;
+        line-height: 139%;
+        color: #000000;
+        @include adaptive-value("font-size", 25, 15, 1);
+    }
+    &__buttons {
+    }
+    &__btn {
+        &:not(:last-child) {
+            margin-right: 15px;
+            @media (min-width: $md2+px) {
+                margin-right: 50px;
+            }
+        }
+        @media (max-width: $md4+px) {
+            padding: 10px 18px;
+        }
+
+        &.btn_transperent {
+            color: #11100E;
+            border-radius: 0;
+            border: 1px solid #000000;
+            background-color: transparent;
+        }
+    }
+}
+
+
+
+.popup_order {
+
+    .popup__content {
+    }
+    .popup__body {
+        position: relative;
+        max-width: 910px;
+        @include adaptive-value("padding-top", 75, 40, 1);
+        @include adaptive-value("padding-bottom", 75, 40, 1);
+        @include adaptive-value("padding-right", 135, 20, 1);
+        @include adaptive-value("padding-left", 135, 20, 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .popup__text {
+        font-family: "Gilroy";
+        font-weight: 400;
+        line-height: 130%;
+        color: #000000;
+        @include adaptive-value("margin-bottom", 35, 20, 1);
+        @include adaptive-value("font-size", 25, 18, 1);
+    }
+    .popup__form {
+    }
+    .popup__close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 3px;
+            background-color: #000;
+            transform: rotate(-45deg);
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 3px;
+            background-color: #000;
+            transform: rotate(45deg);
+        }
+
+    }
+
+
+    .form-popup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .form-popup__item {
+        &:not(:last-child) {
+            @include adaptive-value("margin-bottom", 25, 15, 1);
+        }
+    }
+    .form-popup__input {
+        padding: 12px 20px;
+        @include adaptive-value("width", 510, 290, 1);
+        font-family: "Gilroy";
+        font-weight: 400;
+        line-height: 108%;
+        color: rgba(7, 7, 7, 0.39);
+        @include adaptive-value("font-size", 26, 16, 1);
+    }
+    .form-popup__btn {
+        margin-top: 10px;
+        padding: 14px 70px;
+    }
+    .btn {
+    }
+}
