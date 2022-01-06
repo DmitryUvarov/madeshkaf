@@ -1,0 +1,194 @@
+
+.category {
+
+    &__container {
+    }
+    &__body {
+        @include adaptive-value("margin-bottom", 150, 50, 1);
+        position: relative;
+        .filter {
+            position: absolute;
+            right: 0;
+            font-family: "Gilroy";
+            font-weight: 400;
+            font-size: 26px;
+            line-height: 108%;
+            color: #11100E;
+            border: 1px solid #937A60;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            @include adaptive-value("top", -96, -50, 1);
+            @include adaptive-value("font-size", 26, 16, 1);
+            @include adaptive-value("padding-right", 35, 15, 1);
+            @include adaptive-value("padding-left", 35, 15, 1);
+        }
+    }
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 60px;
+        @media (max-width: $md2+px) {
+            row-gap: 30px;
+        }
+        @media (max-width: $md3+px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include adaptive-value("column-gap", 83, 25, 1);
+        @include adaptive-value("margin-top", 55, 20, 1);
+        @include adaptive-value("margin-bottom", 75, 40, 1);
+    }
+    &__item {
+        @media (max-width: $md3+px) {
+            &:nth-child(1n+7){
+                display: none;
+            }
+        }
+
+    }
+
+    & ~ .popup .popup__body {
+        max-width: 710px;
+        @include adaptive-value("padding", 78, 20, 1);
+    }
+
+}
+
+.item-category {
+
+
+    &__img {
+        & img {
+            max-width: 100%;
+        }
+    }
+    &__text {
+        display: flex;
+        justify-content: space-between;
+        @include adaptive-value("margin-top", 25, 15, 1);
+        @include adaptive-value("margin-bottom", 20, 15, 1);
+    }
+    &__text-title {
+        font-family: "Gilroy";
+        font-weight: 400;
+        @include adaptive-value("font-size", 30, 16, 1);
+        line-height: 93%;
+        color: #000000;
+    }
+    &__text-price {
+        font-family: "Gilroy";
+        font-weight: 400;
+        @include adaptive-value("font-size", 28, 13, 1);
+        line-height: 100%;
+        color: #937A60;
+    }
+    &__message {
+        max-width: 340px;
+        border: 1px solid #937A60;
+        font-family: "Gilroy";
+        font-weight: 400;
+        line-height: 110%;
+        text-align: center;
+        color: #000000;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        @include adaptive-value("font-size", 20, 12, 1);
+        @include adaptive-value("padding-right", 32, 5, 1);
+        @include adaptive-value("padding-left", 32, 5, 1);
+
+    }
+}
+
+.popup_filter {
+    .close-plus {
+        width: 20px;
+        height: 20px;
+
+        &::before, &::after {
+            width: 20px;
+        }
+    }
+    .popup__body {
+        justify-content: start;
+    }
+}
+.popup__content {
+}
+.form-filter {
+}
+.form-filter__body {
+}
+.form-filte__title {
+    font-family: "Gilroy";
+    font-weight: 500;
+    line-height: 78%;
+    color: #937A60;
+    @include adaptive-value("font-size", 36, 25, 1);
+    &:not(:last-child) {
+        @include adaptive-value("margin-bottom", 45, 25, 1);
+    }
+}
+.form-filte__item {
+    &:not(:last-child) {
+        @include adaptive-value("margin-bottom", 35, 15, 1);
+    }
+}
+.form-filte__label {
+    font-family: "Gilroy";
+    font-weight: 400;
+    line-height: 87%;
+    color: #000000;
+    position: relative;
+    cursor: pointer;
+    @include adaptive-value("padding-left", 86, 50, 1);
+    @include adaptive-value("font-size", 32, 20, 1);
+    &::before {
+        content: "";
+        position: absolute;
+        border: 1px solid #937A60;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 26px;
+        @include adaptive-value("width", 25, 20, 1);
+        @include adaptive-value("height", 25, 20, 1);
+        transition: all 0.3s ease 0s;
+    }
+
+}
+.form-filte__input {
+    display: none;
+
+    &:checked + .form-filte__label {
+        &::before {
+            background-color: #937A60;
+        }
+    }
+}
+
+.form-filte__buttons {
+    display: flex;
+    justify-content: space-between;
+    @include adaptive-value("margin-top", 78, 35, 1);
+
+    @media (max-width: $md4+px) {
+        align-items: center;
+        flex-direction: column;
+    }
+}
+.form-filte__btn {
+    white-space: pre;
+    max-width: 260px;
+    width: 100%;
+    @media (min-width: $md4+px) {
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
+    @media (max-width: $md4+px) {
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+
+}
+.btn {
+}

@@ -595,17 +595,31 @@ testWebP(function (support) {
 
 
 // HEADER
-const headerElement = document.querySelector('.header');
 
-const callback = function (entries, observer) {
-    if (entries[0].isIntersecting) {
-        headerElement.classList.remove('_scroll');
-    } else {
-        headerElement.classList.add('_scroll');
-    }
-};
-const headerObserver = new IntersectionObserver(callback);
-headerObserver.observe(headerElement);
+const headerElement = document.querySelector('.header');
+if (headerElement) {
+    const callback = function (entries, observer) {
+        if (entries[0].isIntersecting) {
+            headerElement.classList.remove('_scroll');
+        } else {
+            headerElement.classList.add('_scroll');
+        }
+    };
+    const headerObserver = new IntersectionObserver(callback);
+    headerObserver.observe(headerElement);
+
+
+
+    let headerWrapper = document.querySelector('.header__wrapper');
+    let bodyWidth = document.body.clientWidth;
+    headerWrapper.style.width = bodyWidth + "px";
+    window.addEventListener('resize', function (e) {
+        let bodyWidth = document.body.clientWidth;
+        headerWrapper.style.width = bodyWidth + "px";
+    });
+
+}
+
 
 
 // BURGER
@@ -625,14 +639,6 @@ if (iconMenu) {
 
 // BURGER           //////////
 
-
-let headerWrapper = document.querySelector('.header__wrapper');
-let bodyWidth = document.body.clientWidth;
-headerWrapper.style.width = bodyWidth + "px";
-window.addEventListener('resize', function (e) {
-    let bodyWidth = document.body.clientWidth;
-    headerWrapper.style.width = bodyWidth + "px";
-});
 
 // TABS ===================
 
@@ -662,7 +668,6 @@ function onTabClick(item) {
     });
 }
 
-document.querySelector('.tabs__nav-btn').click();
 
 
 // \TABS ===================
@@ -802,3 +807,64 @@ document.addEventListener('keydown', function (e) {
 });
 
 //=================
+
+
+
+
+const workItems = document.querySelector('.work__items');
+workItems.addEventListener('click', function (e) {
+    if (e.target.closest('.work__item')) {
+        const workItem = e.target.closest('.work__item');
+        const dataItem = workItem.dataset.item;
+        const dataText = workItem.dataset.text;
+        if (document.querySelectorAll('.content-mb.active-i1') || (document.querySelectorAll('.content-mb.active-i2'))) {
+            removeClassesContent(document.querySelectorAll('.content-mb'))
+        }
+        function addClassContent() {
+            const shell = workItem.closest('.shell');
+            const contentMb = shell.querySelector('.content-mb');
+            if (document.querySelector('.content-mb.active-i1') || (document.querySelector('.content-mb.active-i2'))) {
+                removeClassesContent();
+            }
+            contentMb.querySelector('.content-mb-body p').insertAdjacentHTML(
+                'afterbegin',
+                `${dataText}`
+            );
+            contentMb.classList.add(dataItem);
+        }
+        function removeClassesContent(elements) {
+            for (let element of elements) {
+                element.classList.remove('active-i1');
+                element.classList.remove('active-i2');
+                element.querySelector('.content-mb-body .text').textContent = "";
+            }
+        }
+        addClassContent();
+    }
+});
+workItems.addEventListener('mouseover', function (e) {
+    if (e.target.closest('.work__item')) {
+        const workItem = e.target.closest('.work__item');
+        const dataItem = workItem.dataset.itempc;
+        const dataText = workItem.dataset.text;
+        const contentPc = document.querySelector('.content-pc');
+        const textPc = contentPc.querySelector('.text-pc');
+        function removeClassContentPc() {
+            if (document.querySelector('.content-pc.active-i1, .content-pc.active-i2, .content-pc.active-i3, .content-pc.active-i4, .content-pc.active-i5, .content-pc.active-i6')) {
+                contentPc.classList.remove('active-i1');
+                contentPc.classList.remove('active-i2');
+                contentPc.classList.remove('active-i3');
+                contentPc.classList.remove('active-i4');
+                contentPc.classList.remove('active-i5');
+                contentPc.classList.remove('active-i6');
+            }
+        }
+        removeClassContentPc();
+        function addClassContentPc() {
+            contentPc.classList.add(dataItem);
+            textPc.textContent = `${dataText}`;
+
+        }
+        addClassContentPc();
+    }
+});

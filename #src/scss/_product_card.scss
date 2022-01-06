@@ -180,76 +180,34 @@
 
 .popup_order {
 
+    .close-plus {
+        width: 25px;
+        height: 25px;
+        &::before, &::after {
+            width: 25px;
+            background-color: #000;
+        }
+    }
     .popup__content {
-    }
-    .popup__body {
-        position: relative;
-        max-width: 910px;
-        @include adaptive-value("padding-top", 75, 40, 1);
-        @include adaptive-value("padding-bottom", 75, 40, 1);
-        @include adaptive-value("padding-right", 135, 20, 1);
-        @include adaptive-value("padding-left", 135, 20, 1);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .popup__text {
-        font-family: "Gilroy";
-        font-weight: 400;
-        line-height: 130%;
-        color: #000000;
-        @include adaptive-value("margin-bottom", 35, 20, 1);
-        @include adaptive-value("font-size", 25, 18, 1);
     }
     .popup__form {
     }
-    .popup__close {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-        &::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            width: 30px;
-            height: 3px;
-            background-color: #000;
-            transform: rotate(-45deg);
-        }
-        &::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            width: 30px;
-            height: 3px;
-            background-color: #000;
-            transform: rotate(45deg);
-        }
-
-    }
-
 
     .form-popup {
+
+    }
+    .form-popup__badyone {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    .form-popup__badytwo {
+
     }
     .form-popup__item {
         &:not(:last-child) {
             @include adaptive-value("margin-bottom", 25, 15, 1);
         }
-    }
-    .form-popup__input {
-        padding: 12px 20px;
-        @include adaptive-value("width", 510, 290, 1);
-        font-family: "Gilroy";
-        font-weight: 400;
-        line-height: 108%;
-        color: rgba(7, 7, 7, 0.39);
-        @include adaptive-value("font-size", 26, 16, 1);
     }
     .form-popup__btn {
         margin-top: 10px;
@@ -257,4 +215,58 @@
     }
     .btn {
     }
+}
+
+.thanksmess {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.thanksmess__title {
+    & p {
+        font-family: "Gilroy";
+        font-weight: 400;
+        line-height: 97%;
+        color: #000000;
+        text-align: center;
+        @include adaptive-value("font-size", 34, 19, 1);
+        @include adaptive-value("margin-bottom", 22, 14, 1);
+    }
+}
+.btn {
+    @include adaptive-value("margin-top", 20, 10, 1);
+}
+.popup__close {
+}
+
+
+
+
+.popup__body {
+	position: relative;
+	max-width: 910px;
+	@include adaptive-value("padding-top", 75, 40, 1);
+	@include adaptive-value("padding-bottom", 75, 40, 1);
+	@include adaptive-value("padding-right", 135, 20, 1);
+	@include adaptive-value("padding-left", 135, 20, 1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.popup__text {
+	font-family: "Gilroy";
+	font-weight: 400;
+	line-height: 130%;
+	color: #000000;
+	@include adaptive-value("margin-bottom", 35, 20, 1);
+	@include adaptive-value("font-size", 25, 18, 1);
+}
+.form-popup__input {
+	padding: 12px 20px;
+	@include adaptive-value("width", 510, 290, 1);
+	font-family: "Gilroy";
+	font-weight: 400;
+	line-height: 108%;
+	color: rgba(7, 7, 7, 0.39);
+	@include adaptive-value("font-size", 26, 16, 1);
 }

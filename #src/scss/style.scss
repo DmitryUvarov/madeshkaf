@@ -419,6 +419,7 @@ body._lock {
             color: #11100E;
             text-shadow: 1px -1px 7px rgba(186, 217, 0, 0.36);
             max-width: 692px;
+            margin-bottom: 45px;
         }
     }
     &__title {
@@ -449,7 +450,7 @@ body._lock {
     &__container {
     }
     &__body {
-        @include adaptive-value("padding-bottom", 145, 80, 1);
+        @include adaptive-value("padding-bottom", 230, 80, 1);
         & p {
             font-family: "Gilroy";
             font-weight: 400;
@@ -752,6 +753,9 @@ body._lock {
             @media (max-width: $md4+px) {
                 top: 55px;
             }
+            @media (max-width: 630px) {
+                top: 95px;
+            }
         }
         .slider-arrow {
             z-index: 10;
@@ -814,6 +818,9 @@ body._lock {
                     max-width: 509px;
                     width: 100%;
 
+                    @media (max-width: 630px) {
+                        max-width: 380px;
+                    }
                     @media (max-width: $md4+px) {
                         max-width: 248px;
                     }
@@ -911,7 +918,11 @@ body._lock {
 
 .item-offers {
 
-
+    @media (max-width: $md3+px) {
+        &:nth-child(1n+5){
+            display: none;
+        }
+    }
     &__img {
         position: relative;
         & img {
@@ -942,7 +953,7 @@ body._lock {
     &__text {
         display: flex;
         justify-content: space-between;
-        margin-top: 25px;
+        margin-top: 5px;
     }
     &__title {
         font-family: "Gilroy";
@@ -950,6 +961,7 @@ body._lock {
         line-height: 93%;
         color: #000000;
         @include adaptive-value("font-size", 30, 16, 1);
+        margin-top: auto;
     }
     &__price {
         position: relative;
@@ -982,6 +994,32 @@ body._lock {
             color: #E52B2B;
         }
     }
+}
+
+.popup_stock {
+
+    .stock-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .stock-form__title {
+        & p {
+            font-family: "Gilroy";
+            font-weight: 400;
+            line-height: 100%;
+            color: #000000;
+            text-align: center;
+            @include adaptive-value("font-size", 34, 20, 1);
+            &:not(:last-child) {
+                @include adaptive-value("margin-bottom", 22, 15, 1);
+            }
+        }
+    }
+    .btn {
+        @include adaptive-value("margin-top", 42, 25, 1);
+    }
+
 }
 
 
@@ -1251,10 +1289,9 @@ body._lock {
         font-family: "Gilroy";
         font-weight: 400;
         line-height: 100%;
-        text-align: center;
         color: #FFFFFF;
         position: relative;
-        @include adaptive-value("font-size", 30, 20, 1);
+        @include adaptive-value("font-size", 30, 19, 1);
         &:not(:last-child) {
             @include adaptive-value("margin-bottom", 35, 30, 1);
         }
@@ -1268,7 +1305,31 @@ body._lock {
             line-height: 76%;
             text-align: center;
             color: #FFFFFF;
+        }
+        &::after {
+            content: '0';
+            position: absolute;
+            top: -11px;
+            left: -6px;
+            z-index: -1;
+            font-family: "Gilroy";
+            font-weight: 400;
+            font-size: 37px;
+            line-height: 100%;
+            text-align: center;
+            color: #937A60;
 
+        }
+        @media (min-width: 790px) {
+            &.i2 {
+                margin-left: 55px;
+            }
+            &.i3 {
+                margin-left: 110px;
+            }
+            &.i4 {
+                margin-left: 165px;
+            }
         }
     }
 }
@@ -1288,21 +1349,111 @@ body._lock {
         text-align: start;
         @include adaptive-value("margin-bottom", 90, 40, 1);
     }
-    .work__items {
-        @media (max-width: $md3+px) {
+    &__items {
+        display: grid;
+        @media (min-width: $md2+px) {
+            grid-template-columns: repeat(2, 1fr);
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+        @media (max-width: $md2+px) {
             grid-template-columns: repeat(1, 1fr);
         }
     }
-    .work__item {
-        @media (max-width: $md3+px) {
-            display: flex;
-            align-items: center;
+    &__item {
+        position: relative;
+        @include adaptive-value("margin-top", 70, 75, 1);
+        @media (max-width: $md2+px) {
+            &:not(:last-child) {
+                &::before {
+                    content: url(../img/sec2/arrow-mobile.svg);
+                    position: absolute;
+                    bottom: -54px;
+                    left: 20%;
+                    transform: translateX(-50%);
+                    @media (max-width: 600px) {
+                        left: 50%;
+                    }
+                }
+            }
+        }
+        display: flex;
+        align-items: center;
+        @media (min-width: $md2+px) {
+            &:nth-child(2n) {
+                padding-left: 110px;
+            }
+        }
+        @media (min-width: $md2+px) {
+            &.i1 {
+                &::before {
+                    content: url('../img/sec2/arrow-01.png');
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-45%);
+                    right: -55px;
+                }
+            }
+            &.i2 {
+                &::before {
+                    content: url('../img/sec2/arrow-02.png');
+                    position: absolute;
+                    transform: translateX(-45%);
+                    bottom: -75px;
+                    left: 50%;
+                }
+            }
+            &.i3 {
+                &::before {
+                    content: url('../img/sec2/arrow-04.png');
+                    position: absolute;
+                    transform: translateX(-45%);
+                    bottom: -75px;
+                    left: 130px;
+                }
+            }
+            &.i4 {
+                &::before {
+                    content: url('../img/sec2/arrow-03.png');
+                    position: absolute;
+                    left: 10px;
+                    top: 50%;
+                    transform: translateY(-45%);
+                }
+            }
+            &.i5 {
+                &::before {
+                    content: url('../img/sec2/arrow-05.png');
+                    position: absolute;
+                    right: -35px;
+                    top: 50%;
+                    transform: translateY(-45%);
+                }
+            }
         }
     }
-    .work__item-text {
+    &__item-img-block {
+        padding-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+    &__item-text {
+        font-family: "Gilroy";
+        font-weight: 400;
+        line-height: 125%;
+        color: #000000;
+        text-align: center;
+        @include adaptive-value("font-size", 30, 20, 1);
+        margin-left: 28px;
         @media (max-width: $md3+px) {
-            padding-left: 55px;
             flex: 1 1 auto;
+            margin-left: 0;
+        }
+        @media (max-width: $md2+px) {
+            text-align: left;
+            padding-left: 55px;
         }
     }
 }
@@ -1585,3 +1736,12 @@ body._lock {
 
 
 @import "_product_card";
+@import "_category";
+@import "_quiz";
+
+
+
+
+
+
+

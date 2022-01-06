@@ -1,5 +1,31 @@
 // общие стили для кнопок на странице
 
+input {
+
+    &.red {
+        background: #FBE9E9 !important;
+        border: 1px solid #F86464;
+        &::-webkit-input-placeholder {
+            color: rgba(243, 59, 59, 0.39);
+         }
+        &:focus {
+            background: #FBE9E9;
+            border: 1px solid #F86464;
+            color: rgba(243, 59, 59, 0.39);
+        }
+    }
+    &.green {
+        background: #FBFBFB;
+        border: 1px solid #0BE922;
+        &:focus {
+            background: #FBFBFB;
+            border: 1px solid #0BE922;
+            color: rgba(7, 7, 7, 0.39);
+        }
+    }
+
+}
+
 
 
 ._title {
@@ -20,7 +46,21 @@
     color: #FFFFFF;
     @include adaptive-value("font-size", 26, 19, 1);
     cursor: pointer;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: rgba(175, 150, 120, .8);
+        }
+    }
+    &.not-active {
+        cursor: not-allowed;
+        background-color: #CFC6BA;
+        &:hover {
+            background-color: #CFC6BA;
+        }
+    }
 }
+
 
 .angle {
     @media (max-width: $md2+px) {
