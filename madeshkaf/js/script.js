@@ -640,6 +640,27 @@ if (iconMenu) {
 // BURGER           //////////
 
 
+// КНОПКА НАВЕРХ
+
+body.addEventListener('scroll', () => {
+    let scrollTop = body.scrollTop;
+    const btnScrollTop = document.querySelector('.scroll-top');
+    if (scrollTop >= 1250) {
+        btnScrollTop.classList.add('active');
+        btnScrollTop.addEventListener('click', () => {
+            console.log('ddd');
+            body.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    } else {
+        btnScrollTop.classList.remove('active');
+    }
+});
+
+// \\\ КНОПКА НАВЕРХ
+
 // TABS ===================
 
 const tabsBtn = document.querySelectorAll(".tabs__nav-btn");
@@ -812,59 +833,61 @@ document.addEventListener('keydown', function (e) {
 
 
 const workItems = document.querySelector('.work__items');
-workItems.addEventListener('click', function (e) {
-    if (e.target.closest('.work__item')) {
-        const workItem = e.target.closest('.work__item');
-        const dataItem = workItem.dataset.item;
-        const dataText = workItem.dataset.text;
-        if (document.querySelectorAll('.content-mb.active-i1') || (document.querySelectorAll('.content-mb.active-i2'))) {
-            removeClassesContent(document.querySelectorAll('.content-mb'))
-        }
-        function addClassContent() {
-            const shell = workItem.closest('.shell');
-            const contentMb = shell.querySelector('.content-mb');
-            if (document.querySelector('.content-mb.active-i1') || (document.querySelector('.content-mb.active-i2'))) {
-                removeClassesContent();
+if (workItems) {
+    workItems.addEventListener('click', function (e) {
+        if (e.target.closest('.work__item')) {
+            const workItem = e.target.closest('.work__item');
+            const dataItem = workItem.dataset.item;
+            const dataText = workItem.dataset.text;
+            if (document.querySelectorAll('.content-mb.active-i1') || (document.querySelectorAll('.content-mb.active-i2'))) {
+                removeClassesContent(document.querySelectorAll('.content-mb'))
             }
-            contentMb.querySelector('.content-mb-body p').insertAdjacentHTML(
-                'afterbegin',
-                `${dataText}`
-            );
-            contentMb.classList.add(dataItem);
-        }
-        function removeClassesContent(elements) {
-            for (let element of elements) {
-                element.classList.remove('active-i1');
-                element.classList.remove('active-i2');
-                element.querySelector('.content-mb-body .text').textContent = "";
+            function addClassContent() {
+                const shell = workItem.closest('.shell');
+                const contentMb = shell.querySelector('.content-mb');
+                if (document.querySelector('.content-mb.active-i1') || (document.querySelector('.content-mb.active-i2'))) {
+                    removeClassesContent();
+                }
+                contentMb.querySelector('.content-mb-body p').insertAdjacentHTML(
+                    'afterbegin',
+                    `${dataText}`
+                );
+                contentMb.classList.add(dataItem);
             }
-        }
-        addClassContent();
-    }
-});
-workItems.addEventListener('mouseover', function (e) {
-    if (e.target.closest('.work__item')) {
-        const workItem = e.target.closest('.work__item');
-        const dataItem = workItem.dataset.itempc;
-        const dataText = workItem.dataset.text;
-        const contentPc = document.querySelector('.content-pc');
-        const textPc = contentPc.querySelector('.text-pc');
-        function removeClassContentPc() {
-            if (document.querySelector('.content-pc.active-i1, .content-pc.active-i2, .content-pc.active-i3, .content-pc.active-i4, .content-pc.active-i5, .content-pc.active-i6')) {
-                contentPc.classList.remove('active-i1');
-                contentPc.classList.remove('active-i2');
-                contentPc.classList.remove('active-i3');
-                contentPc.classList.remove('active-i4');
-                contentPc.classList.remove('active-i5');
-                contentPc.classList.remove('active-i6');
+            function removeClassesContent(elements) {
+                for (let element of elements) {
+                    element.classList.remove('active-i1');
+                    element.classList.remove('active-i2');
+                    element.querySelector('.content-mb-body .text').textContent = "";
+                }
             }
+            addClassContent();
         }
-        removeClassContentPc();
-        function addClassContentPc() {
-            contentPc.classList.add(dataItem);
-            textPc.textContent = `${dataText}`;
+    });
+    workItems.addEventListener('mouseover', function (e) {
+        if (e.target.closest('.work__item')) {
+            const workItem = e.target.closest('.work__item');
+            const dataItem = workItem.dataset.itempc;
+            const dataText = workItem.dataset.text;
+            const contentPc = document.querySelector('.content-pc');
+            const textPc = contentPc.querySelector('.text-pc');
+            function removeClassContentPc() {
+                if (document.querySelector('.content-pc.active-i1, .content-pc.active-i2, .content-pc.active-i3, .content-pc.active-i4, .content-pc.active-i5, .content-pc.active-i6')) {
+                    contentPc.classList.remove('active-i1');
+                    contentPc.classList.remove('active-i2');
+                    contentPc.classList.remove('active-i3');
+                    contentPc.classList.remove('active-i4');
+                    contentPc.classList.remove('active-i5');
+                    contentPc.classList.remove('active-i6');
+                }
+            }
+            removeClassContentPc();
+            function addClassContentPc() {
+                contentPc.classList.add(dataItem);
+                textPc.textContent = `${dataText}`;
 
+            }
+            addClassContentPc();
         }
-        addClassContentPc();
-    }
-});
+    });
+}

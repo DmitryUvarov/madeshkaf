@@ -22,7 +22,33 @@
 
 
 
-
+    .scroll-top {
+        cursor: pointer;
+        position: fixed;
+        bottom: -100px;
+        border: 2px solid #AF9678;
+        z-index: 1500;
+        transition: bottom 0.3s ease 0s;
+        @include adaptive-value("right", 73, 15, 1);
+        @include adaptive-value("width", 76, 35, 1);
+        @include adaptive-value("height", 76, 35, 1);
+        &.active {
+            @include adaptive-value("bottom", 50, 15, 1);
+        }
+        .arrow {
+            position: relative;
+            @include adaptive-value("height", 76, 33, 1);
+            @include adaptive-value("width", 76, 33, 1);
+            &::before {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                @include adaptive-value("font-size", 36, 20, 1);
+                color: #AF9678;
+            }
+        }
+    }
 
 
 
