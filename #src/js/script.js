@@ -328,12 +328,7 @@ if (workItems) {
             const textPc = contentPc.querySelector('.text-pc');
             function removeClassContentPc() {
                 if (document.querySelector('.content-pc.active-i1, .content-pc.active-i2, .content-pc.active-i3, .content-pc.active-i4, .content-pc.active-i5, .content-pc.active-i6')) {
-                    contentPc.classList.remove('active-i1');
-                    contentPc.classList.remove('active-i2');
-                    contentPc.classList.remove('active-i3');
-                    contentPc.classList.remove('active-i4');
-                    contentPc.classList.remove('active-i5');
-                    contentPc.classList.remove('active-i6');
+                    contentPc.classList.remove('active-i1', 'active-i2', 'active-i3', 'active-i4', 'active-i5', 'active-i6',);
                 }
             }
             removeClassContentPc();

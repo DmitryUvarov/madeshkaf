@@ -154,24 +154,89 @@
         color: #000000;
         @include adaptive-value("font-size", 25, 15, 1);
     }
-    &__buttons {
-    }
-    &__btn {
-        &:not(:last-child) {
-            margin-right: 15px;
-            @media (min-width: $md2+px) {
-                margin-right: 50px;
+    .text-card__price {
+        @media (min-width: 650px) {
+            display: flex;
+        }
+        & a {
+            @include adaptive-value("font-size", 26, 16, 1);
+            @include adaptive-value("padding-top", 14, 10, 1);
+            @include adaptive-value("padding-bottom", 14, 10, 1);
+            @include adaptive-value("padding-left", 40, 45, 1);
+            @include adaptive-value("padding-right", 40, 45, 1);
+        }
+        .left {
+            & a {
+                display: block;
+                text-align: center;
+                @media (min-width: 650px) {
+                    width: 206px;
+                }
+            }
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            @media (min-width: 650px) {
+                margin-right: 52px;
+            }
+            @media (max-width: 650px) {
+                flex-direction: row;
             }
         }
-        @media (max-width: $md4+px) {
-            padding: 10px 18px;
-        }
-
-        &.btn_transperent {
+        .price {
+            padding-right: 25px;
+            padding-left: 25px;
+            font-family: "Gilroy";
+            font-weight: 400;
+            line-height: 108%;
             color: #11100E;
-            border-radius: 0;
             border: 1px solid #000000;
-            background-color: transparent;
+            @include adaptive-value("width", 206, 152, 1);
+            @include adaptive-value("font-size", 26, 16, 1);
+            @include adaptive-value("padding-top", 14, 7, 1);
+            @include adaptive-value("padding-bottom", 14, 7, 1);
+            @media (min-width: 650px) {
+                margin-bottom: 32px;
+            }
+            @media (max-width: 650px) {
+                margin-right: 24px;
+            }
+
+        }
+        .btn {
+            margin-top: 0;
+        }
+        .right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            & p {
+                margin-bottom: 32px;
+                font-family: "Gilroy";
+                font-style: 400;
+                line-height: 108%;
+                text-align: center;
+                color: #000000;
+                @include adaptive-value("font-size", 26, 15, 1);
+                @media (max-width: 650px) {
+                    margin-bottom: 17px;
+                }
+            }
+            & a {
+                display: block;
+                width: 100%;
+                text-align: center;
+                @media (max-width: 650px) {
+                    max-width: 254px;
+                    padding-right: 0;
+                    padding-left: 0;
+                }
+            }
+
+            @media (max-width: 650px) {
+                margin-top: 42px;
+            }
         }
     }
 }

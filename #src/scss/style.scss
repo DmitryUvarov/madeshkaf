@@ -156,7 +156,6 @@ body._lock {
             height: 100%;
             top: 0;
             left: 0;
-            z-index: 1;
             background: rgba(53, 53, 53, 0.24);
             // Если браузер поддерживает свойство backdrop-filter
             @supports ((-webkit-backdrop-filter: blur(32px)) or (backdrop-filter: blur(32px))) {
@@ -359,6 +358,15 @@ body._lock {
             &:hover {
                 &::before {
                     color: #0088cc;
+                }
+            }
+        }
+    }
+    ._icon-instagram {
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    color: #C13584;
                 }
             }
         }
@@ -1636,6 +1644,15 @@ body._lock {
             &:hover {
                 &::before {
                     color: #0088cc;
+                }
+            }
+        }
+    }
+    ._icon-instagram {
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    color: #C13584;
                 }
             }
         }
