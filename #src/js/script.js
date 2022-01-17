@@ -1,6 +1,6 @@
-//@@include('spoller.js');
+
 @@include('sliders.js');
-//@@include('dynamic_adapt.js'); // Динамический адаптив
+
 
 
 
