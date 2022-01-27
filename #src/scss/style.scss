@@ -99,6 +99,9 @@ body._lock {
 
 
 // ОСНОВНОЙ БЛОК ==========================================================================================================
+.body_catalog .catalog__body {
+    @include adaptive-value("padding-bottom", 160, 40, 1);
+}
 .page {
     flex: 1 1 auto;
 
@@ -462,7 +465,8 @@ body._lock {
     &__container {
     }
     &__body {
-        @include adaptive-value("padding-bottom", 230, 80, 1);
+        @include adaptive-value("padding-top", 80, 0, 1);
+        @include adaptive-value("padding-bottom", 145, 50, 1);
         & p {
             font-family: "Gilroy";
             font-weight: 400;
@@ -479,12 +483,24 @@ body._lock {
         font-weight: 400;
         line-height: 103%;
         color: #937A60;
-        @include adaptive-value("padding-top", 145, 50, 1);
         @include adaptive-value("font-size", 63, 39, 1);
     }
 }
 
+.sec {
 
+
+    &__container {
+    }
+    ._container {
+    }
+    .sec__body {
+        @include adaptive-value("padding-bottom", 145, 50, 1);
+    }
+    .about__subtitle {
+    }
+
+}
 
 
 
@@ -495,13 +511,17 @@ body._lock {
     }
     &__title {
         text-align: start;
-        @include adaptive-value("padding-bottom", 125, 40, 1);
+        line-height: 100%
+    }
+    &__subtitle {
+        @include adaptive-value("padding-top", 15, 10, 1);
+        @include adaptive-value("font-size", 20, 15, 1);
     }
     &__body {
-        @include adaptive-value("padding-bottom", 160, 80, 1);
+        @include adaptive-value("padding-bottom", 60, 80, 1);
     }
     &__items {
-
+        @include adaptive-value("padding-top", 115, 30, 1);
         display: grid;
         @media (min-width: $md2+px) {
             grid-template-columns: repeat(3, 1fr);
@@ -675,6 +695,7 @@ body._lock {
     &__container {
     }
     &__body {
+        @include adaptive-value("padding-top", 100, 50, 1);
     }
     &__title {
         text-align: start;
@@ -1572,13 +1593,12 @@ body._lock {
 
 
 .contacts {
-
+    @include adaptive-value("padding-top", 150, 60, 1);
 
     &__container {
     }
     &__title {
         text-align: start;
-        @include adaptive-value("margin-top", 150, 50, 1);
     }
     &__body {
         @include adaptive-value("padding-top", 52, 40, 1);

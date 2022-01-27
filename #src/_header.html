@@ -11,12 +11,12 @@
                 <div class="close-bg"></div>
                 <nav class="header__menu menu-header @@if(nav==2){black} ">
                     <ul class="menu-header__list">
-                        <li class="menu-header__item"><a href="#" class="menu-header__link">О нас</a></li>
-                        <li class="menu-header__item"><a href="#" class="menu-header__link">Каталог</a></li>
-                        <li class="menu-header__item"><a href="#" class="menu-header__link">Материалы</a></li>
-                        <li class="menu-header__item"><a href="#" class="menu-header__link">Рассчитать<br>стоимость</a></li>
-                        <li class="menu-header__item"><a href="#" class="menu-header__link">Отзывы</a></li>
-                        <li class="menu-header__item"><a href="#" class="menu-header__link">Контакты</a></li>
+                        <li class="menu-header__item"><a data-href="@@if(nav == 1){about}" href="@@if(nav==2){index.html#about}" class="menu-header__link">О нас</a></li>
+                        <li class="menu-header__item"><a data-href="" href="category.html" class="menu-header__link">Каталог</a></li>
+                        <li class="menu-header__item"><a data-href="@@if(nav==1){materials}" href="@@if(nav==2){index.html#materials}" class="menu-header__link">Материалы</a></li>
+                        <li class="menu-header__item"><a data-href="" href="quiz.html" class="menu-header__link">Рассчитать<br>стоимость</a></li>
+                        <li class="menu-header__item"><a data-href="@@if(nav == 1){reviews}" href="@@if(nav==2){index.html#reviews}" class="menu-header__link">Отзывы</a></li>
+                        <li class="menu-header__item"><a data-href="@@if(nav == 1){contacts}" href="@@if(nav==2){index.html#contacts}" class="menu-header__link">Контакты</a></li>
                         <li class="menu-header__item">
                             <a href="tel:+375259199290" class="menu-header__link">+375259199290<br>Пн-Вс 9:00-21:00</a>
                         </li>

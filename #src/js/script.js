@@ -341,3 +341,30 @@ if (workItems) {
         }
     });
 }
+
+const anchors = document.querySelectorAll("[data-href]");
+for (let anchor of anchors) {
+    if (anchor.dataset.href.length >= 1) {
+        let anchorOne = anchor;
+        const blockId = anchorOne.dataset.href;
+        anchorOne.addEventListener('click', (e) => {
+            let menuHeader = document.querySelector('.menu-header');
+            if (!menuHeader.classList.contains('_active')) {
+                scrollToBlock(e, blockId);
+            } else {
+                body.classList.remove('_lock');
+                document.querySelector('.icon-menu').classList.remove('_active');
+                menuHeader.classList.remove('_active');
+                scrollToBlock(e, blockId);
+            }
+        });
+    }
+}
+function scrollToBlock(e, id) {
+    e.preventDefault();
+    document.getElementById(id).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+}
+
